@@ -1,0 +1,206 @@
+/* Contenedor principal */
+.users-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #e8ffe4;
+  min-height: 100vh;
+  border-radius: 20px;
+  color: #003304;
+}
+
+/* Título */
+.users-page h1 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.user-form {
+  background: #9cff92;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px; /* Más espacio entre los inputs */
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-form input,
+.user-form select {
+  flex: 1 1 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #9cff92;
+  min-width: 10;
+}
+
+/* Botones del formulario */
+.user-form button {
+  background-color: #00b502;
+  color: #ffffff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 140px; /* Establecemos un tamaño mínimo para los botones */
+  max-width: 250px; /* Limitar el tamaño de los botones */
+}
+
+.user-form button:not(:last-child) {
+  margin-bottom: 15px; /* Espacio entre los botones */
+}
+
+.user-form button:hover {
+  background-color: #04fa00;
+}
+
+/* Tabla */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  overflow-x: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: #003304;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px 15px;
+  text-align: left;
+  white-space: nowrap;
+  
+}
+
+.users-table th {
+  background-color: #5eff53;
+  color: white;
+}
+
+.users-table tr:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+  color: #003304;
+}
+
+.users-table tr:hover {
+  background-color: #04fa00;
+}
+
+/* Botones de acciones en la tabla */
+.users-table button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 4px;
+}
+
+.users-table button:hover {
+  opacity: 0.7;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  margin: 20px 0;
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* -------------------- */
+/* 📱 Media Queries */
+/* -------------------- */
+
+@media (max-width: 768px) {
+  .user-form {
+    flex-direction: column;
+  }
+
+  .user-form input,
+  .user-form select,
+  .user-form button {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .users-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    
+  }
+
+  .users-table table {
+    width: 100%;
+    min-width: 600px; /* Mantiene las columnas visibles con scroll */
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .users-page h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    max-width: 95%; /* se ajusta al ancho del contenedor padre */
+    font-size: 1rem;
+  }
+
+  /* Botones en formulario, asegurando que no se junten en pantallas pequeñas */
+  .user-form button:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .users-page {
+    padding: 10px;
+  }
+
+  .users-page h1 {
+    font-size: 1.3rem;
+  }
+
+  .user-form {
+    gap: 8px;
+  }
+
+  .user-form input,
+  .user-form select,
+  .user-form button {
+    padding: 8px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 10px;
+  }
+}
+.success-alert {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  animation: fadeOut 0.5s ease-in-out 3.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

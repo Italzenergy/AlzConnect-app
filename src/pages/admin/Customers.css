@@ -1,0 +1,283 @@
+/* Customers.css - Versión mejorada para el nuevo diseño */
+
+/* Contenedor principal */
+.customers-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f0fff0; /* Verde muy claro en lugar del verde brillante */
+  min-height: 100vh;
+  color: #003304;
+}
+
+/* Formulario */
+.customer-form {
+  background: #5eff53;
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.customer-form input,
+.customer-form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #9cff92;
+  background: white;
+}
+
+.customer-form button {
+  background-color: #00b502;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.customer-form button:hover {
+  background-color: #04fa00;
+}
+
+.customer-form button[type="button"] {
+  background-color: #f44336;
+}
+
+.customer-form button[type="button"]:hover {
+  background-color: #d32f2f;
+}
+
+/* Lista de clientes (reemplaza la tabla) */
+.customers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tarjeta de cliente */
+.customer-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Resumen del cliente (parte superior de la tarjeta) */
+.customer-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #e8ffe6;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.customer-summary:hover {
+  background-color: #d0ffcd;
+}
+
+.customer-info h3 {
+  margin: 0 0 8px 0;
+  color: #003304;
+}
+
+.customer-info p {
+  margin: 4px 0;
+}
+
+.customer-actionss {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-actionss button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.customer-actionss button:first-child {
+  background-color: #00b502;
+  color: white;
+}
+
+.customer-actionss button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.customer-actionss button:hover {
+  opacity: 0.8;
+}
+
+.toggle-icon {
+  font-size: 18px;
+  margin-left: 10px;
+  color: #00b502;
+}
+
+/* Detalles expandibles del cliente */
+.customer-details {
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid #eee;
+}
+
+.details-section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.details-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+
+.details-section h4 {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #00b502;
+  color: #003304;
+}
+
+/* Listas dentro de los detalles */
+.orders-list,
+.sheets-list {
+  display: grid;
+  gap: 15px;
+}
+
+.order-item,
+.sheet-item {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #00b502;
+}
+
+.order-events,
+.order-routes {
+  margin-top: 12px;
+  padding-left: 15px;
+  border-left: 3px solid #ddd;
+}
+
+.event-item,
+.route-item {
+  padding: 12px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.event-item p,
+.route-item p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.event-item small,
+.route-item small {
+  color: #666;
+}
+
+/* Enlaces para las fichas técnicas */
+.sheet-item a {
+  color: #00b502;
+  text-decoration: none;
+}
+
+.sheet-item a:hover {
+  text-decoration: underline;
+}
+
+/* Estados de los pedidos */
+.order-item p strong {
+  color: #003304;
+}
+
+/* Mensajes de carga y vacío */
+.customers-page > p {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .customer-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .customer-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .customer-actions {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .customer-info,
+  .customer-actions {
+    width: 100%;
+  }
+  
+  .order-item,
+  .sheet-item {
+    padding: 12px;
+  }
+  
+  .event-item,
+  .route-item {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .customer-actions button {
+    width: 100%;
+  }
+  
+  .toggle-icon {
+    align-self: center;
+  }
+}
+/*  Estilo del buscador */
+.search-input {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 15px 10px 40px; /* espacio extra para el ícono */
+  margin: 15px 0;
+  border: 2px solid #28a745;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='0 0 24 24'><path d='M21 20l-5.8-5.8a7 7 0 1 0-1.2 1.2L20 21zM10 16a6 6 0 1 1 0-12 6 6 0 0 1 0 12z'/></svg>") no-repeat 12px center;
+  background-size: 18px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+  border-color: #218838;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
