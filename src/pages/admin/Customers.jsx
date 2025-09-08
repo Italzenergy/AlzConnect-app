@@ -5,7 +5,7 @@ import "./Customers.css";
 export default function Customers() {
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState(""); // 🔍 búsqueda
+  const [search, setSearch] = useState(""); 
   const [form, setForm] = useState({
     name: "",
     email: "",
